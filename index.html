@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anshil - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+body {
+    background-color: rgb(2, 2, 86);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}  
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgb(34, 34, 121);
+    flex-wrap: wrap;
+}
+.left {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .left {
+        text-align: left;
+        width: auto;
+    }
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+nav ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+nav ul li a:hover {
+    color: rgb(82, 82, 230);
+}
+.firstSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 7cqi 0;
+    padding: 2rem;
+}
+@media (min-width: 768px) {
+    .firstSection {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+    }
+    .firstSection > div {
+        width: 45%;
+    }
+}
+.leftSection {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.rightSection img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+.purple {
+    color: rgb(170, 107, 228);
+    font-weight: 700;
+}
+#element {
+    color: rgb(170, 107, 228);
+}
+section {
+    padding: 2rem;
+}
+#about, #services, #projects, #contact {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    #about, #services, #projects, #contact {
+        text-align: left;
+    }
+}
+#services ul {
+    list-style: none;
+    padding: 0;
+}
+#services ul li {
+    margin: 1rem 0;
+    font-weight: 400;
+}
+#projects div {
+    margin: 1.5rem 0;
+}
+footer {
+    background-color: rgb(34, 34, 121);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+}
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: rgb(82, 82, 230);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav> 
+            <div class="left">Anshil's Portfolio</div>
+            <div class="right"> 
+                <ul>
+                    <li><a href="#"> Home</a></li>
+                    <li><a href="#about"> About</a></li>
+                    <li><a href="#services"> Services </a></li>
+                    <li><a href="#projects"> Projects</a></li>
+                    <li><a href="#contact"> Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+  
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">Hey, My name is <span class="purple">Anshil</span> 
+                <div>and I am a Technical Support Specialist </div>
+                <span id="element"></span>
+            </div>
+            
+            <div class="rightSection"> 
+                <img src="images/technical_support.png" alt="Technical Support Specialist"> 
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate Computer Engineering Technician with skills in hardware maintenance, networking, programming, and embedded systems. I enjoy problem-solving and building efficient systems.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Technical Support and Troubleshooting</li>
+                <li>Web Development</li>
+                <li>Network Configuration</li>
+                <li>Embedded System Programming</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div>
+                <h3>Smart Home Temperature Monitoring System</h3>
+                <p>A project to monitor and manage home temperature efficiently using sensors and embedded systems.</p>
+            </div>
+            <div>
+                <h3>Customer Sentiment Analysis for E-commerce</h3>
+                <p>Analyzing customer reviews to extract insights using data analysis and natural language processing techniques.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>You can reach me at <a href="mailto:anshil@example.com">anshil@example.com</a></p>
+            <p>Check out my work on <a href="https://github.com/anshil-github" target="_blank">GitHub</a></p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a> |
+            <a href="#about">About</a> |
+            <a href="#services">Services</a> |
+            <a href="#projects">Projects</a> |
+            <a href="#contact">Contact</a>
+        </div>
+        <p>&copy; 2024 Anshil. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Web Developer', 'Data Analyst', 'Programmer'],
+          typeSpeed: 50,
+          backSpeed: 25,
+          loop: true
+        });
+    </script>
+</body>
+</html>
