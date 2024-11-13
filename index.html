@@ -7,169 +7,209 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-body {
-    background-color: rgb(2, 2, 86);
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-}  
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgb(34, 34, 121);
-    flex-wrap: wrap;
-}
-.left {
-    font-size: 1.8rem;
-    text-align: center;
-    width: 100%;
-}
-@media (min-width: 768px) {
-    .left {
-        text-align: left;
-        width: auto;
-    }
-}
-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-nav ul li {
-    list-style: none;
-    margin: 0 15px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-    transition: color 0.3s;
-}
-nav ul li a:hover {
-    color: rgb(82, 82, 230);
-}
-.firstSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 4cqi 0;
-    padding: 1.5rem;
-}
-@media (min-width: 768px) {
-    .firstSection {
-        flex-direction: row;
-        justify-content: space-around;
-        text-align: left;
-    }
-    .firstSection > div {
-        width: 45%;
-    }
-}
-.leftSection {
-    font-size: 1.3rem;
-    font-weight: 400;
-}
-.rightSection img {
-    width: 80%;
-    max-width: 250px;
-    height: auto;
-    margin-top: 1rem;
-}
-.purple {
-    color: rgb(170, 107, 228);
-    font-weight: 700;
-}
-#element {
-    color: rgb(170, 107, 228);
-}
-section {
-    padding: 2rem;
-}
-#about, #services, #projects, #contact {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 1rem;
-}
-@media (min-width: 768px) {
-    #about, #services, #projects, #contact {
-        text-align: left;
-    }
-}
-#services ul {
-    list-style: none;
-    padding: 0;
-}
-#services ul li {
-    margin: 1rem 0;
-    font-weight: 400;
-}
-#projects div {
-    margin: 1.5rem 0;
-}
-footer {
-    background-color: rgb(34, 34, 121);
-    padding: 1.5rem;
-    text-align: center;
-    color: white;
-    margin-top: 2rem;
-}
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-}
-.footer-links a:hover {
-    color: rgb(82, 82, 230);
-}
-.call-to-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(34, 34, 121);
-    padding: 2rem;
-    margin-top: 2rem;
-}
-.call-to-action button {
-    background-color: rgb(82, 82, 230);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.call-to-action button:hover {
-    background-color: rgb(60, 60, 200);
-}
+        body {
+            background-color: rgb(2, 2, 86);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(34, 34, 121);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 100;
+        }
+        .navbar.open {
+            transform: translateX(0);
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .navbar ul li {
+            margin: 1rem 0;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: rgb(82, 82, 230);
+        }
+        .hamburger {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 101;
+        }
+        .close-nav {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+        nav.main-nav {
+            display: none;
+            background-color: rgb(34, 34, 121);
+            padding: 1rem;
+        }
+        nav.main-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav.main-nav ul li {
+            margin: 0 15px;
+        }
+        nav.main-nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        nav.main-nav ul li a:hover {
+            color: rgb(82, 82, 230);
+        }
+        .firstSection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 4cqi 0;
+            padding: 1.5rem;
+            margin-top: 100px;
+        }
+        @media (min-width: 768px) {
+            .firstSection {
+                flex-direction: row;
+                justify-content: space-around;
+                text-align: left;
+            }
+            .firstSection > div {
+                width: 45%;
+            }
+            .hamburger {
+                display: none;
+            }
+            nav.main-nav {
+                display: block;
+            }
+            .navbar {
+                display: none;
+            }
+        }
+        .leftSection {
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+        .rightSection img {
+            width: 80%;
+            max-width: 250px;
+            height: auto;
+            margin-top: 1rem;
+        }
+        .purple {
+            color: rgb(170, 107, 228);
+            font-weight: 700;
+        }
+        #element {
+            color: rgb(170, 107, 228);
+        }
+        section {
+            padding: 2rem;
+        }
+        #about, #services, #projects, #contact {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 1rem;
+        }
+        @media (min-width: 768px) {
+            #about, #services, #projects, #contact {
+                text-align: left;
+            }
+        }
+        #services ul {
+            list-style: none;
+            padding: 0;
+        }
+        #services ul li {
+            margin: 1rem 0;
+            font-weight: 400;
+        }
+        #projects div {
+            margin: 1.5rem 0;
+        }
+        footer {
+            background-color: rgb(34, 34, 121);
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+            margin-top: 2rem;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: rgb(82, 82, 230);
+        }
+        
+        }
     </style>
 </head>
 <body>
-    <header>
-        <nav> 
-            <div class="left">Anshil's Portfolio</div>
-            <div class="right"> 
-                <ul>
-                    <li><a href="#"> Home</a></li>
-                    <li><a href="#about"> About</a></li>
-                    <li><a href="#services"> Services </a></li>
-                    <li><a href="#projects"> Projects</a></li>
-                    <li><a href="#contact"> Contact Me</a></li>
-                </ul>
-            </div>
+    <header style="background-color: rgb(50, 50, 150); padding: 1rem 0;">
+        <button class="hamburger" onclick="toggleNav()">&#9776;</button>
+        <h1 style="text-align: center; color: white; margin-top: 1rem;">Anshil's Portfolio</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
         </nav>
     </header>
+    <nav class="navbar" id="navbar">
+        <button class="close-nav" onclick="toggleNav()">&times;</button>
+        <ul>
+            <li><a href="#" onclick="toggleNav()">Home</a></li>
+            <li><a href="#about" onclick="toggleNav()">About</a></li>
+            <li><a href="#services" onclick="toggleNav()">Services</a></li>
+            <li><a href="#projects" onclick="toggleNav()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleNav()">Contact Me</a></li>
+        </ul>
+    </nav>
   
     <main>
         <section class="firstSection">
@@ -177,7 +217,6 @@ footer {
                 <div>and I am a Technical Support Specialist </div>
                 <span id="element"></span>
             </div>
-            
             <div class="rightSection"> 
                 <img src="—Pngtree—technical support vector professional operator_5189954.png" alt="Technical Support Specialist"> 
             </div>
@@ -236,14 +275,11 @@ footer {
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <p>You can reach me at <a href="mailto:anshil@example.com">anshil@example.com</a></p>
+            <p>You can reach me at <a href="mailto:anny5858.py@gmail.com">anny5858.py@gmail.com</a></p>
             <p>Check out my work on <a href="https://github.com/PythonAnshil?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a></p>
         </section>
 
-        <section class="call-to-action">
-            <h2>Interested in working together?</h2>
-            <button onclick="location.href='#contact'">Get in Touch</button>
-        </section>
+       
     </main>
     
     <footer>
@@ -259,11 +295,15 @@ footer {
     
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
+        function toggleNav() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('open');
+        }
         var typed = new Typed('#element', {
-          strings: ['Web Developer', 'Data Analyst', 'Programmer'],
-          typeSpeed: 50,
-          backSpeed: 25,
-          loop: true
+            strings: ['Web Developer', 'Data Analyst', 'Programmer'],
+            typeSpeed: 50,
+            backSpeed: 25,
+            loop: true
         });
     </script>
 </body>
