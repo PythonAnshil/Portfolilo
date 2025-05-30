@@ -4,192 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anshil - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: rgb(2, 2, 86);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(34, 34, 121);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 100;
-        }
-        .navbar.open {
-            transform: translateX(0);
-        }
-        .navbar ul {
-            list-style: none;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        .navbar ul li {
-            margin: 1rem 0;
-        }
-        .navbar ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-        .navbar ul li a:hover {
-            color: rgb(82, 82, 230);
-        }
-        .hamburger {
-            position: fixed;
-            top: 1.5rem;
-            left: 1.5rem;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            z-index: 101;
-        }
-        .close-nav {
-            align-self: flex-end;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            margin-bottom: 2rem;
-        }
-        nav.main-nav {
-            display: none;
-            background-color: rgb(34, 34, 121);
-            padding: 1rem;
-        }
-        nav.main-nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        nav.main-nav ul li {
-            margin: 0 15px;
-        }
-        nav.main-nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-        nav.main-nav ul li a:hover {
-            color: rgb(82, 82, 230);
-        }
-        .firstSection {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin: 4cqi 0;
-            padding: 1.5rem;
-            margin-top: 100px;
-        }
-        @media (min-width: 768px) {
-            .firstSection {
-                flex-direction: row;
-                justify-content: space-around;
-                text-align: left;
-            }
-            .firstSection > div {
-                width: 45%;
-            }
-            .hamburger {
-                display: none;
-            }
-            nav.main-nav {
-                display: block;
-            }
-            .navbar {
-                display: none;
-            }
-        }
-        .leftSection {
-            font-size: 1.3rem;
-            font-weight: 400;
-        }
-        .rightSection img {
-            width: 80%;
-            max-width: 250px;
-            height: auto;
-            margin-top: 1rem;
-        }
-        .purple {
-            color: rgb(170, 107, 228);
-            font-weight: 700;
-        }
-        #element {
-            color: rgb(170, 107, 228);
-        }
-        section {
-            padding: 2rem;
-        }
-        #about, #services, #projects, #contact {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 1rem;
-        }
-        @media (min-width: 768px) {
-            #about, #services, #projects, #contact {
-                text-align: left;
-            }
-        }
-        #services ul {
-            list-style: none;
-            padding: 0;
-        }
-        #services ul li {
-            margin: 1rem 0;
-            font-weight: 400;
-        }
-        #projects div {
-            margin: 1.5rem 0;
-        }
-        footer {
-            background-color: rgb(34, 34, 121);
-            padding: 1.5rem;
-            text-align: center;
-            color: white;
-            margin-top: 2rem;
-        }
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        .footer-links a:hover {
-            color: rgb(82, 82, 230);
-        }
-        
-        }
-    </style>
 </head>
 <body>
-    <header style="background-color: rgb(50, 50, 150); padding: 1rem 0;">
+    <header>
         <button class="hamburger" onclick="toggleNav()">&#9776;</button>
-        <h1 style="text-align: center; color: white; margin-top: 1rem;">Anshil's Portfolio</h1>
+        <h1>Anshil's Portfolio</h1>
         <nav class="main-nav">
             <ul>
                 <li><a href="#">Home</a></li>
@@ -200,6 +23,7 @@
             </ul>
         </nav>
     </header>
+
     <nav class="navbar" id="navbar">
         <button class="close-nav" onclick="toggleNav()">&times;</button>
         <ul>
@@ -210,15 +34,15 @@
             <li><a href="#contact" onclick="toggleNav()">Contact Me</a></li>
         </ul>
     </nav>
-  
+
     <main>
         <section class="firstSection">
-            <div class="leftSection">Hey, My name is <span class="purple">Anshil</span> 
-                <div>and I am a Technical Support Specialist </div>
-                <span id="element"></span>
+            <div class="leftSection">
+                Hey, My name is <span class="purple">Anshil</span>
+                <div>and I am a <span id="element"></span></div>
             </div>
-            <div class="rightSection"> 
-                <img src="—Pngtree—technical support vector professional operator_5189954.png" alt="Technical Support Specialist"> 
+            <div class="rightSection">
+                <img src="profile-image.png" alt="Technical Support Specialist">
             </div>
         </section>
 
@@ -240,48 +64,18 @@
         <section id="projects">
             <h2>Projects</h2>
             <div>
-                <h3>Smart Home Temperature Monitoring System (Future Project)</h3>
-                <p>A project to monitor and manage home temperature efficiently using sensors and embedded systems.</p>
-            </div>
-            <div>
-                <h3>Customer Sentiment Analysis for E-commerce (Future Project)</h3>
-                <p>Analyzing customer reviews to extract insights using data analysis and natural language processing techniques.</p>
-            </div>
-            <div>
-                <h3>Voice Assistant (Version 1)</h3>
-                <p>Keep working and upgrading: <a href="https://github.com/PythonAnshil/VoiceAssistant.git" target="_blank" rel="noopener noreferrer">GitHub Link</a></p>
-            </div>
-            <div>
-                <h3>Voice Assistant (Version 2)</h3>
-                <p>Upgraded version: <a href="https://github.com/PythonAnshil/Voice-Asistant2.git" target="_blank" rel="noopener noreferrer">GitHub Link</a></p>
-            </div>
-            <div>
-                <h3>Snake Game</h3>
-                <p>A classic snake game developed using Python: <a href="https://github.com/PythonAnshil/SnakeGame.git" target="_blank" rel="noopener noreferrer">GitHub Link</a></p>
-            </div>
-            <div>
-                <h3>PDF Merger</h3>
-                <p>A tool to merge multiple PDF files: <a href="https://github.com/PythonAnshil/PDF-merger.git" target="_blank" rel="noopener noreferrer">GitHub Link</a></p>
-            </div>
-            <div>
-                <h3>Inventory Management System</h3>
-                <p>An object-oriented inventory management system developed using Java: <a href="https://github.com/PythonAnshil/Inventory_Management_System.git" target="_blank" rel="noopener noreferrer">GitHub Link</a></p>
-            </div>
-            <div>
-                <h3>Task Manager (College Group Project)</h3>
-                <p>A collaborative project for managing tasks: <a href="https://github.com/PythonAnshil/Task_Manger.git" target="_blank" rel="noopener noreferrer">GitHub Link</a></p>
+                <h3>Voice Assistant</h3>
+                <p><a href="https://github.com/PythonAnshil/VoiceAssistant.git" target="_blank">GitHub Link</a></p>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact Me</h2>
-            <p>You can reach me at <a href="mailto:anny5858.py@gmail.com">anny5858.py@gmail.com</a></p>
-            <p>Check out my work on <a href="https://github.com/PythonAnshil?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            <p>Email: <a href="mailto:anny5858.py@gmail.com">anny5858.py@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/PythonAnshil" target="_blank">My GitHub</a></p>
         </section>
-
-       
     </main>
-    
+
     <footer>
         <div class="footer-links">
             <a href="#">Home</a> |
@@ -292,19 +86,8 @@
         </div>
         <p>&copy; 2024 Anshil. All Rights Reserved.</p>
     </footer>
-    
+
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        function toggleNav() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('open');
-        }
-        var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Data Analyst', 'Programmer'],
-            typeSpeed: 50,
-            backSpeed: 25,
-            loop: true
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
